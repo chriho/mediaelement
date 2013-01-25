@@ -156,7 +156,7 @@
 	height: 16px;
 	width: 16px;
 	border: 0;
-	background: transparent url(controls.svg) no-repeat;
+	background: transparent url(controls.png) no-repeat;
 }
 
 .no-svg .mejs-controls .mejs-button button { 
@@ -321,7 +321,6 @@
 	text-align: center;
 	left: 0;
 }
-
 .mejs-controls .mejs-time-rail .mejs-time-float-corner {
 	position: absolute;
 	display: block;
@@ -335,19 +334,9 @@
 	border-radius: 0;
 	top: 15px;
 	left: 13px;
+
 }
 
-.mejs-long-video .mejs-controls .mejs-time-rail .mejs-time-float {
-	width: 48px;
-}
-
-.mejs-long-video .mejs-controls .mejs-time-rail .mejs-time-float-current {
-	width: 44px;
-}
-
-.mejs-long-video .mejs-controls .mejs-time-rail .mejs-time-float-corner {
-	left: 18px;
-}
 
 
 
@@ -686,7 +675,109 @@
 }
 /* End: TRACK (Captions and Chapters) */
 
+/* Start: AUDIOTRACKS (audio languages) */
+/* Added by: Christian Horn, cmhorn@online.de */
 
+.mejs-controls .mejs-audiotracks-button {
+	position: relative;
+}
+
+.mejs-controls .mejs-audiotracks-button button {
+	background-position: -144px 0;
+}
+.mejs-controls .mejs-audiotracks-button .mejs-audiotracks-selector {
+	visibility: hidden;
+	position: absolute;
+	bottom: 26px;
+	right: -10px;
+	width: 130px;
+	height: 100px;
+	background: url(background.png);
+	background: rgba(50,50,50,0.7);
+	border: solid 1px transparent;
+	padding: 10px;
+	overflow: hidden;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+/*
+.mejs-controls .mejs-audiotrack-button:hover  .mejs-audiotrack-selector {
+	visibility: visible;
+}
+*/
+
+.mejs-controls .mejs-audiotracks-button .mejs-audiotracks-selector ul {
+	margin: 0;
+	padding: 0;
+	display: block;
+	list-style-type: none !important;
+	overflow: hidden;
+}
+.mejs-controls .mejs-audiotracks-button .mejs-audiotracks-selector ul li {
+	margin: 0 0 6px 0;
+	padding: 0;
+	list-style-type: none !important;
+	display: block;
+	color: #fff;
+	overflow: hidden;
+}
+.mejs-controls .mejs-audiotracks-button .mejs-audiotracks-selector ul li input {
+	clear: both;
+	float: left;
+	margin: 3px 3px 0 5px;
+}
+.mejs-controls .mejs-audiotracks-button .mejs-audiotracks-selector ul li label {
+	width: 100px;
+	float: left;
+	padding: 4px 0 0 0;
+	line-height: 15px;
+	font-family: helvetica, arial;
+	font-size: 10px;
+}
+
+.mejs-controls .mejs-audiotracks-button .mejs-audiotracks-translations {
+	font-size: 10px;
+	margin: 0 0 5px 0;
+}
+
+.mejs-audiotracks-layer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align:center;
+	/*font-weight: bold;*/
+	line-height: 22px;
+	font-size: 12px;
+	color: #fff;
+}
+.mejs-audiotracks-layer  a {
+	color: #fff;
+	text-decoration: underline;
+}
+.mejs-audiotracks-layer[lang=ar] {
+	font-size: 20px;
+	font-weight: normal;
+}
+
+.mejs-audiotracks-position {
+	position: absolute;
+	width: 100%;
+	bottom: 15px;
+	left: 0;
+}
+
+.mejs-audiotracks-position-hover {
+	bottom: 45px;
+}
+
+.mejs-audiotracks-text {
+	padding: 3px 5px;
+	background: url(background.png);
+	background: rgba(20, 20, 20, 0.8);
+
+}
+/* End: AUDIOTRACKS (audio languages) */
 
 .mejs-clear {
 	clear: both;
