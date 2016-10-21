@@ -96,7 +96,7 @@ namespace SilverlightMediaElement
 			if (initParams.ContainsKey("timerate"))
 				Int32.TryParse(initParams["timerrate"], out _timerRate);
 			if (initParams.ContainsKey("startvolume"))
-				Double.TryParse(initParams["startvolume"], out _volume);
+				Double.TryParse(initParams["startvolume"], NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out _volume);
 
 			if (_timerRate == 0)
 				_timerRate = 250;
@@ -142,7 +142,7 @@ namespace SilverlightMediaElement
 			//HtmlPage.Window.Invoke("html5_MediaPluginBridge_initPlugin", new object[] {_htmlid});
 			try
 			{
-				HtmlPage.Window.Eval("mejs.MediaPluginBridge.initPlugin('" + _htmlid + "');");
+                HtmlPage.Window.Eval(_htmlid + "_init();");
 			}
 			catch { }
 		}
@@ -320,7 +320,7 @@ namespace SilverlightMediaElement
 			try {
 				CultureInfo invCulture = CultureInfo.InvariantCulture;
 
-				HtmlPage.Window.Invoke("setTimeout", "mejs.MediaPluginBridge.fireEvent('" + _htmlid + "','" + name + "'," +
+				HtmlPage.Window.Invoke("setTimeout", _htmlid + "_event('" + name + "'," +
 				@"{" +
 						@"""name"": """ + name + @"""" +
 						@", ""currentTime"":" + (media.Position.TotalSeconds).ToString(invCulture) + @"" +

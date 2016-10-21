@@ -7,6 +7,7 @@
 
 	<script src="../build/jquery.js"></script>
 	<script src="../build/mediaelement-and-player.min.js"></script>
+	<script src="testforfiles.js"></script>	
 	<link rel="stylesheet" href="../build/mediaelementplayer.min.css" />
 </head>
 <body>
@@ -26,6 +27,7 @@
 
 <script>
 $('audio,video').mediaelementplayer({
+  keyActions: [], // disable global key bindings to allow sourcechooser keyboard navigation
 	features: ['playpause','progress','volume','sourcechooser']
 });
 </script>
